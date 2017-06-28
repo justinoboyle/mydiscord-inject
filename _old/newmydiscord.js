@@ -1,7 +1,6 @@
 /** MYDISCORD-START */
 (function() {
-    if(!window)
-        window = global;
+    let window = global;
     window._MYDISCORD = {
         _internalConfig: global.MYDISCORD_TEMP_CONFIG,
         _beautifulDiscordCSSHook: () => console.log("No BeautifulDiscord CSS hook installed.")
