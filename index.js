@@ -83,6 +83,7 @@ let self = {
                     if(source.includes(payload))
                         return resolve(id);
                 }
+                return resolve('stock'); // otherwise it's stock i guess
             }).catch(reject);
         })
     }
