@@ -1,0 +1,11 @@
+{
+    "name": "mydiscord-inject",
+    "version": "1.0.0",
+    "description": "mydiscord injection payload",
+    "main": "index.js",
+    "author": "Justin O'Boyle",
+    "license": "MIT",
+    "devDependencies": {},
+    "dependencies": {},
+    "dependencies-ignore": {}
+}

@@ -1,0 +1,1 @@
+mainWindow.webContents.on('dom-ready', function () {});
