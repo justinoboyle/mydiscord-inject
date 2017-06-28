@@ -1,11 +1,11 @@
-window.MYDISCORD_TEMP_CONFIG = JSON.parse(atob(`${PAYLOAD}`));
+MYDISCORD_TEMP_CONFIG = JSON.parse(atob(`${PAYLOAD}`));
 
 /** MYDISCORD-START */
 (function() {
     if(!window)
         window = global;
     window._MYDISCORD = {
-        _internalConfig: window.MYDISCORD_TEMP_CONFIG,
+        _internalConfig: MYDISCORD_TEMP_CONFIG,
         _beautifulDiscordCSSHook: () => console.log("No BeautifulDiscord CSS hook installed.")
     };
     window.applyAndWatchCSS = _MYDISCORD._beautifulDiscordCSSHook;
