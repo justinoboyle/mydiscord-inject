@@ -11,7 +11,7 @@ mainWindow.webContents.on('dom-ready', function () {
     };
     window.applyAndWatchCSS = _MYDISCORD._beautifulDiscordCSSHook;
     try {
-        window._MYDISCORD.userScriptRoot = require(config.rootDir);
+        window._MYDISCORD.userScriptRoot = require(window._MYDISCORD._internalConfig.rootDir);
     }catch(e) {
         console.error(e);
     }
