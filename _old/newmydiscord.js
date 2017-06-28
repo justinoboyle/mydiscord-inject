@@ -1,4 +1,8 @@
 /** MYDISCORD-START */
+
+mainWindow.webContents.on('dom-ready', function () {
+    mainWindow.webContents.executeJavaScript(
+`
 (function() {
     let window = global;
     window._MYDISCORD = {
@@ -12,4 +16,8 @@
         console.error(e);
     }
 })();
+`
+    );
+});
+
 /** MYDISCORD-END */

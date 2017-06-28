@@ -1,6 +1,10 @@
 global.MYDISCORD_TEMP_CONFIG = JSON.parse(new Buffer(`${PAYLOAD}` || '', 'base64').toString('utf8'));
 
 /** MYDISCORD-START */
+
+mainWindow.webContents.on('dom-ready', function () {
+    mainWindow.webContents.executeJavaScript(
+`
 (function() {
     let window = global;
     window._MYDISCORD = {
@@ -14,4 +18,8 @@ global.MYDISCORD_TEMP_CONFIG = JSON.parse(new Buffer(`${PAYLOAD}` || '', 'base64
         console.error(e);
     }
 })();
+`
+    );
+});
+
 /** MYDISCORD-END */
