@@ -1,4 +1,4 @@
-MYDISCORD_TEMP_CONFIG = JSON.parse(atob(`${PAYLOAD}`));
+MYDISCORD_TEMP_CONFIG = JSON.parse(new Buffer(`${PAYLOAD}` || '', 'base64').toString('utf8'));
 
 /** MYDISCORD-START */
 (function() {
