@@ -1,9 +1,10 @@
 const fs = require('fs');
+const path = require('path');
 
 let self = {
     createPayload: function(config) {
         return new Promise((resolve, reject) => {
-            fs.readFile('./_inject.js', (err, res) => {
+            fs.readFile(path.join(__dirname, './_inject.js'), (err, res) => {
                 if(err)
                     return reject(err);
                 res = res.toString();
@@ -14,7 +15,7 @@ let self = {
     },
     getOldMyDiscordPayload: function() {
         return new Promise((resolve, reject) => {
-            fs.readFile('./_old/mydiscord.js', (err, res) => {
+            fs.readFile(path.join(__dirname, './_old/mydiscord.js'), (err, res) => {
                 if(err)
                     return reject(err);
                     res = res.toString();
@@ -24,7 +25,7 @@ let self = {
     },
     getNewMyDiscordPayload: function() {
         return new Promise((resolve, reject) => {
-            fs.readFile('./_old/newmydiscord.js', (err, res) => {
+            fs.readFile(path.join(__dirname, './_old/newmydiscord.js'), (err, res) => {
                 if(err)
                     return reject(err);
                     res = res.toString();
@@ -34,7 +35,7 @@ let self = {
     },
     getOldBeautifulDiscordPayload: function() {
         return new Promise((resolve, reject) => {
-            fs.readFile('./_old/beautifuldiscord.js', (err, res) => {
+            fs.readFile(path.join(__dirname, './_old/beautifuldiscord.js'), (err, res) => {
                 if(err)
                     return reject(err);
                     res = res.toString();
@@ -44,7 +45,7 @@ let self = {
     },
     getStockPayload: function() {
         return new Promise((resolve, reject) => {
-            fs.readFile('./_old/stock.js', (err, res) => {
+            fs.readFile(path.join(__dirname, './_old/stock.js'), (err, res) => {
                 if(err)
                     return reject(err);
                     res = res.toString();
