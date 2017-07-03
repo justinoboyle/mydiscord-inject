@@ -33,6 +33,16 @@ let self = {
             })
         })
     },
+    getCurrentMyDiscordPayload: function() {
+        return new Promise((resolve, reject) => {
+            fs.readFile(path.join(__dirname, './_old/currentmydiscord.js'), (err, res) => {
+                if(err)
+                    return reject(err);
+                    res = res.toString();
+                return resolve(res);
+            })
+        })
+    },
     getOldBeautifulDiscordPayload: function() {
         return new Promise((resolve, reject) => {
             fs.readFile(path.join(__dirname, './_old/beautifuldiscord.js'), (err, res) => {
@@ -67,7 +77,9 @@ let self = {
                 self.getOldMyDiscordPayload().then(mydiscordv1 => 
                     self.getOldBeautifulDiscordPayload().then(beautifuldiscord => 
                         self.getNewMyDiscordPayload().then(mydiscordv2 => 
-                            resolve({stock, mydiscordv1, mydiscordv2, beautifuldiscord})
+                            self.getCurrentMyDiscordPayload().then(mydiscordv3 => 
+                                resolve({stock, mydiscordv1, mydiscordv2, mydiscordv3, beautifuldiscord})
+                            )
                         )
                      )
                 )
