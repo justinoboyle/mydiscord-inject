@@ -1,6 +1,6 @@
 {
     "name": "mydiscord-inject",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "description": "mydiscord injection payload",
     "main": "index.js",
     "author": "Justin O'Boyle",

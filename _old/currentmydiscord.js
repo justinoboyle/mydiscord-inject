@@ -6,7 +6,7 @@ mainWindow.webContents.on('dom-ready', function () {
 (function() {
     let window = global;
     window._MYDISCORD = {
-        _internalConfig: global.MYDISCORD_TEMP_CONFIG,
+        _internalConfig: require(require('path').join(__dirname,'../../app/config-mydiscord.json')),
         _beautifulDiscordCSSHook: () => console.log("No BeautifulDiscord CSS hook installed.")
     };
     window.applyAndWatchCSS = _MYDISCORD._beautifulDiscordCSSHook;
